@@ -8,6 +8,8 @@ const localStyledJsxCss = css`body { background-color: purple; }`;
 const styleSheetString = 'body { background-color: green; }';
 const localStyledJsxCssFromStyleSheetString = css`${styleSheetString}`;
 
+import styleSheet from './style-sheet.css';
+
 export default () => {
   return (
     <div>
@@ -43,6 +45,9 @@ export default () => {
 
       {/* 😢 SyntaxError: The Identifier `localStyledJsxCssFromStyleSheetString` is either `undefined` or it is not an external StyleSheet reference i.e. it doesn't come from an `import` or `require` statement */}
       {/* <style jsx global>{localStyledJsxCssFromStyleSheetString}</style> */}
+
+      {/* 🎉 */}
+      <style jsx global>{styleSheet}</style>
     </div>
   );
 };
