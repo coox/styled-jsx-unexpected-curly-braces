@@ -5,14 +5,13 @@ module.exports = {
     config.module.rules.push(
       {
         test: /\.css$/,
-        loader: 'emit-file-loader',
-        options: {
-          name: 'dist/[path][name].[ext]',
-        },
-      },
-      {
-        test: /\.css$/,
         use: [
+          {
+            loader: 'emit-file-loader',
+            options: {
+              name: 'dist/[path][name].[ext]',
+            },
+          },
           'babel-loader',
           path.resolve(__dirname, './styled-jsx-css-loader'),
         ],
